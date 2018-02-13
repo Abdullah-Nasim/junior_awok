@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">Junior Awok</string>
+    <string name="app_name">Awok Junior</string>
+    <string name="image_desc">image_desc</string>
 </resources>
