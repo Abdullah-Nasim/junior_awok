@@ -115,7 +115,7 @@ public class MainRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
      * This method is responsible for add more items into the previous data set of the recycler.
      * This method will be used on pagination to insert more items in the data set.
      *
-     * @param items
+     * @param items contains more home product items returned by the API on pagination.
      */
     public void loadMoreItems(List<HomeAPIResponse.ITEM> items){
         mDataSetHome.addAll(items);
