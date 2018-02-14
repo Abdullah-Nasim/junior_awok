@@ -16,7 +16,7 @@ In this project I have tried to make the clone of the main page of awok applicat
 
 - com.myown.juniorawok.activities - Contains all the activities.
 - com.myown.juniorawok.adapters - Contails all the adapter. In this project only the Recycler Adapters.
-- com.myown.juniorawok.adapters.viewholders - Contains all views holder of the adapters.
+- com.myown.juniorawok.adapters.viewholders - Contains all view holders of the adapters.
 - com.myown.juniorawok.models - Contains the model classes of the entities in the project.
 - com.myown.juniorawok.network - Contains everything about network implementation.
 - com.myown.juniorawok.utils - Contains all helpers supporting code.
