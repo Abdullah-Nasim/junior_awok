@@ -12,6 +12,8 @@ import retrofit2.http.Query;
 
 /**
  * Created by Abdullah on 2/13/2018.
+ *
+ * This is the ServicesInterface for our application.
  */
 
 public interface ServicesInterface {

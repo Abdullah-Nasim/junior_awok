@@ -13,6 +13,12 @@
             android:padding="10dp"
             android:contentDescription="@string/image_desc"
             android:src="@drawable/awok_logo"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorAccent"
+            android:text="@string/awok_junior"
+            android:textStyle="bold"/>
     </android.support.v7.widget.Toolbar>
 
 </LinearLayout>

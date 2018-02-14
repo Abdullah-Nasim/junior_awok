@@ -13,45 +13,32 @@ import butterknife.ButterKnife;
 
 /**
  * Created by Abdullah on 2/13/2018.
+ *
+ * This is a view holder for flash product item.
  */
 
 public class FlashRecyclerViewHolder extends RecyclerView.ViewHolder {
 
-    @BindView(R.id.flash_product_left_image)
-    public ImageView leftImageView;
+    @BindView(R.id.flash_parent_container)
+    public LinearLayout parentContainer;
 
-    @BindView(R.id.flash_product_right_image)
-    public ImageView rightImageView;
+    @BindView(R.id.flash_product_image)
+    public ImageView imageView;
 
-    @BindView(R.id.flash_product_left_name)
-    public TextView leftProductName;
+    @BindView(R.id.flash_product_name)
+    public TextView productName;
 
-    @BindView(R.id.flash_product_right_name)
-    public TextView rightProductName;
+    @BindView(R.id.flash_product_old_price)
+    public TextView productOldPrice;
 
-    @BindView(R.id.flash_product_left_old_price)
-    public TextView LeftProductOldPrice;
+    @BindView(R.id.flash_product_new_price)
+    public TextView productNewPrice;
 
-    @BindView(R.id.flash_product_right_old_price)
-    public TextView rightProductOldPrice;
+    @BindView(R.id.flash_product_sale)
+    public TextView productSale;
 
-    @BindView(R.id.flash_product_left_new_price)
-    public TextView leftProductNewPrice;
-
-    @BindView(R.id.flash_product_right_new_price)
-    public TextView rightProductNewPrice;
-
-    @BindView(R.id.flash_product_left_sale)
-    public TextView leftProductSale;
-
-    @BindView(R.id.flash_product_right_sale)
-    public TextView rightProductSale;
-
-    @BindView(R.id.flash_product_left_sale_status_container)
-    public LinearLayout leftSaleContainer;
-
-    @BindView(R.id.flash_product_right_sale_status_container)
-    public LinearLayout rightSaleContainer;
+    @BindView(R.id.flash_product_sale_status_container)
+    public LinearLayout saleContainer;
 
     public FlashRecyclerViewHolder(View itemView) {
         super(itemView);

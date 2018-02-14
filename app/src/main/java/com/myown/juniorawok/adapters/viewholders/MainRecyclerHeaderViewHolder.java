@@ -9,7 +9,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by Netaq on 2/13/2018.
+ * Created by Abdullah on 2/13/2018.
+ *
+ * This is a view holder for a horizontal recycler for flash products.
  */
 
 public class MainRecyclerHeaderViewHolder extends RecyclerView.ViewHolder {

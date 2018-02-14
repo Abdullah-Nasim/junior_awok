@@ -11,6 +11,10 @@ import static com.myown.juniorawok.utils.NavigationController.startMainActivity;
 
 /**
  * Created by Abdullah on 2/13/2018.
+ *
+ * This is the first activity which is launched upon application startup.
+ * This activity will just wait for 2 seconds and will call the navigation controller method to start
+ * MainActivity.
  */
 
 public class SplashActivity extends AppCompatActivity {

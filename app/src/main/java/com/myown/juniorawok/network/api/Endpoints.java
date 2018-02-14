@@ -1,7 +1,11 @@
 package com.myown.juniorawok.network.api;
 
 /**
- * Created by Netaq on 2/13/2018.
+ * Created by Abdullah on 2/13/2018.
+ *
+ * This class contains the endpoints of the API.
+ * All of the attributes in this class shall be static. So, that they can be used from anywhere
+ * without even declaring the object of this class.
  */
 
 public class Endpoints {

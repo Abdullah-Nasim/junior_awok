@@ -11,7 +11,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by Netaq on 2/13/2018.
+ * Created by Abdullah on 2/13/2018.
+ *
+ * This is a view holder for home product item.
  */
 
 public class MainRecyclerViewHolder extends RecyclerView.ViewHolder {

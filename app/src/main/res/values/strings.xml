@@ -5,4 +5,7 @@
     <string name="buy_now">BUY NOW</string>
     <string name="upcoming">UPCOMING</string>
     <string name="sold_out">SOLD OUT</string>
+    <string name="unable_to_fetch_data">Unable to fetch data.</string>
+    <string name="unable_to_connect_to_the_internet">Unable to connect to the internet.</string>
+    <string name="awok_junior">Awok Junior</string>
 </resources>

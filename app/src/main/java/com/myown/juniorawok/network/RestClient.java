@@ -8,6 +8,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * Created by Abdullah on 2/13/2018.
+ *
+ * This class provides the implementation of Retrofit RestClient.
  */
 
 public class RestClient {

@@ -5,7 +5,9 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 /**
- * Created by Netaq on 2/13/2018.
+ * Created by Abdullah on 2/13/2018.
+ *
+ * This is a model class for the response of flash products API.
  */
 
 public class FlashAPIResponse {

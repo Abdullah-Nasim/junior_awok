@@ -10,12 +10,16 @@ import android.view.ViewGroup;
 import com.myown.juniorawok.R;
 import com.myown.juniorawok.adapters.viewholders.FlashRecyclerViewHolder;
 import com.myown.juniorawok.network.models.FlashAPIResponse;
+import com.myown.juniorawok.utils.Utils;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 /**
- * Created by Netaq on 2/14/2018.
+ * Created by Abdullah on 2/14/2018.
+ *
+ * This is an adapter class for flash products recycler.
+ * This class will feature the implementation of the Recycler Adapter for flash products recycler.
  */
 
 public class FlashRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
@@ -23,8 +27,13 @@ public class FlashRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.View
     private Context mContext;
     private List<FlashAPIResponse.ITEM> mDataSet;
 
-    private int mDataSetKey = 0;
-
+    /**
+     * This is the constructor method for FlashRecyclerAdapter which will be called by the
+     * MainRecyclerAdapter.
+     *
+     * @param mContext will contain the context of the base activity.
+     * @param mDataSet will contain the data set based on which the listing will be created.
+     */
     FlashRecyclerAdapter(Context mContext, List<FlashAPIResponse.ITEM> mDataSet) {
         this.mContext = mContext;
         this.mDataSet = mDataSet;
@@ -40,49 +49,37 @@ public class FlashRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.View
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         FlashRecyclerViewHolder flashRecyclerViewHolder = (FlashRecyclerViewHolder)holder;
 
-        if(mDataSetKey<mDataSet.size()){
-            Picasso.with(mContext).load(mDataSet.get(mDataSetKey).getiMAGE().getsRC()).fit().into(flashRecyclerViewHolder.leftImageView);
-            flashRecyclerViewHolder.leftProductName.setText(mDataSet.get(mDataSetKey).getnAME());
-            flashRecyclerViewHolder.leftProductNewPrice.setText(mDataSet.get(mDataSetKey).getpRICES().getpRICE_NEW());
-            flashRecyclerViewHolder.LeftProductOldPrice.setText(mDataSet.get(mDataSetKey).getpRICES().getpRICE_OLD());
-            flashRecyclerViewHolder.LeftProductOldPrice.setPaintFlags(flashRecyclerViewHolder.LeftProductOldPrice.
-                    getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-            if(mDataSet.get(mDataSetKey).getsTATE().equals("ACTIVE")){
-                flashRecyclerViewHolder.leftProductSale.setText(R.string.buy_now);
-                flashRecyclerViewHolder.leftSaleContainer.setBackgroundColor(ContextCompat.getColor(mContext, R.color.colorAccent));
-            }else if(mDataSet.get(mDataSetKey).getsTATE().equals("UPCOMING")){
-                flashRecyclerViewHolder.leftProductSale.setText(R.string.upcoming);
-                flashRecyclerViewHolder.leftSaleContainer.setBackgroundColor(ContextCompat.getColor(mContext, R.color.colorGreen));
-            }else if(mDataSet.get(mDataSetKey).getsTATE().equals("EXPIRED")){
-                flashRecyclerViewHolder.leftProductSale.setText(R.string.sold_out);
-                flashRecyclerViewHolder.leftSaleContainer.setBackgroundColor(ContextCompat.getColor(mContext, R.color.colorPrimaryDark));
-            }
+        // In the following line I am calculating half of the device screen size and dp and
+        // allocating it to the width of particular item.
+        flashRecyclerViewHolder.parentContainer.getLayoutParams().width = Utils.getScreenWidth(mContext) / 2-12;
 
-            mDataSetKey+=1;
+        // Setting up the values of the UI components based on their positions
+        Picasso.with(mContext).load(mDataSet.get(position).getiMAGE().getsRC()).fit().
+                into(flashRecyclerViewHolder.imageView);
+        flashRecyclerViewHolder.productName.setText(mDataSet.get(position).getnAME());
+        flashRecyclerViewHolder.productNewPrice.setText(mDataSet.get(position).getpRICES().getpRICE_NEW());
+        flashRecyclerViewHolder.productOldPrice.setText(mDataSet.get(position).getpRICES().getpRICE_OLD());
+        flashRecyclerViewHolder.productOldPrice.setPaintFlags(flashRecyclerViewHolder.productOldPrice.
+                getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
 
-            Picasso.with(mContext).load(mDataSet.get(mDataSetKey).getiMAGE().getsRC()).fit().into(flashRecyclerViewHolder.rightImageView);
-            flashRecyclerViewHolder.rightProductName.setText(mDataSet.get(mDataSetKey).getnAME());
-            flashRecyclerViewHolder.rightProductNewPrice.setText(mDataSet.get(mDataSetKey).getpRICES().getpRICE_NEW());
-            flashRecyclerViewHolder.rightProductOldPrice.setText(mDataSet.get(mDataSetKey).getpRICES().getpRICE_OLD());
-            flashRecyclerViewHolder.rightProductOldPrice.setPaintFlags(flashRecyclerViewHolder.rightProductOldPrice.
-                    getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-            if(mDataSet.get(mDataSetKey).getsTATE().equals("ACTIVE")){
-                flashRecyclerViewHolder.rightProductSale.setText(R.string.buy_now);
-                flashRecyclerViewHolder.rightSaleContainer.setBackgroundColor(ContextCompat.getColor(mContext, R.color.colorAccent));
-            }else if(mDataSet.get(mDataSetKey).getsTATE().equals("UPCOMING")){
-                flashRecyclerViewHolder.rightProductSale.setText(R.string.upcoming);
-                flashRecyclerViewHolder.rightSaleContainer.setBackgroundColor(ContextCompat.getColor(mContext, R.color.colorGreen));
-            }else if(mDataSet.get(mDataSetKey).getsTATE().equals("EXPIRED")){
-                flashRecyclerViewHolder.rightProductSale.setText(R.string.sold_out);
-                flashRecyclerViewHolder.rightSaleContainer.setBackgroundColor(ContextCompat.getColor(mContext, R.color.colorPrimaryDark));
-            }
-
-            mDataSetKey+=1;
+        // Checking the present state of product sale.
+        if(mDataSet.get(position).getsTATE().equals("ACTIVE")){
+            flashRecyclerViewHolder.productSale.setText(R.string.buy_now);
+            flashRecyclerViewHolder.saleContainer.setBackgroundColor(ContextCompat.getColor(mContext,
+                    R.color.colorAccent));
+        }else if(mDataSet.get(position).getsTATE().equals("UPCOMING")){
+            flashRecyclerViewHolder.productSale.setText(R.string.upcoming);
+            flashRecyclerViewHolder.saleContainer.setBackgroundColor(ContextCompat.getColor(mContext,
+                    R.color.colorGreen));
+        }else if(mDataSet.get(position).getsTATE().equals("EXPIRED")){
+            flashRecyclerViewHolder.productSale.setText(R.string.sold_out);
+            flashRecyclerViewHolder.saleContainer.setBackgroundColor(ContextCompat.getColor(mContext,
+                    R.color.colorPrimaryDark));
         }
     }
 
     @Override
     public int getItemCount() {
-        return mDataSet.size()/2;
+        return mDataSet.size();
     }
 }
