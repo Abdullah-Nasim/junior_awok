@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Awok Junior</string>
     <string name="image_desc">image_desc</string>
+    <string name="error">Error</string>
+    <string name="buy_now">BUY NOW</string>
+    <string name="upcoming">UPCOMING</string>
+    <string name="sold_out">SOLD OUT</string>
 </resources>

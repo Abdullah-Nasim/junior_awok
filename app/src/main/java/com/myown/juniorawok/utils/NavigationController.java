@@ -10,6 +10,12 @@ import com.myown.juniorawok.activities.main_activity.MainActivity;
  */
 
 public class NavigationController {
+
+    /**
+     *This method is responsible for starting Main Activity.
+     * Since it is a static method, So it can be envoked from anywhere.
+     * @param context
+     */
     public static void startMainActivity(Context context) {
         Intent intent = new Intent(context, MainActivity.class);
         context.startActivity(intent);

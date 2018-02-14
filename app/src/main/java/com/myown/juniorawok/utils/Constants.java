@@ -5,4 +5,5 @@ package com.myown.juniorawok.utils;
  */
 
 public class Constants {
+    public static String BASE_URL = "http://www.awok.com/api/";
 }

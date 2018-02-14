@@ -6,7 +6,8 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 import com.myown.juniorawok.R;
-import com.myown.juniorawok.utils.NavigationController;
+
+import static com.myown.juniorawok.utils.NavigationController.startMainActivity;
 
 /**
  * Created by Abdullah on 2/13/2018.
@@ -26,7 +27,7 @@ public class SplashActivity extends AppCompatActivity {
             public void run() {
 
                 //Call the NavigationController to start main activity
-                NavigationController.startMainActivity(SplashActivity.this);
+                startMainActivity(SplashActivity.this);
                 finish();
 
             }
