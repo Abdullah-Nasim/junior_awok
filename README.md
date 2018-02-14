@@ -1,88 +1,33 @@
-# Project Title
+# Awok Junior
 
-One Paragraph of project description goes here
+In this project I have tried to make the clone of the main page of awok application. The sailent features of this project are as follow:
 
-## Getting Started
+- Flash Sale Products
+- Main Products with pagination 
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+# Libraries Used
 
-### Prerequisites
+- **ButterKnife** - For the binding of view UI components with activities
+- **Retrofit** - For the network calls
+- **RxJava** - For making 2 Async Retrofit calls at the same time and combining their responses
+- **Picasso** - For rendering images
 
-What things you need to install the software and how to install them
+# Project Structure
 
-```
-Give examples
-```
+- com.myown.juniorawok.activities - Contains all the activities.
+- com.myown.juniorawok.adapters - Contails all the adapter. In this project only the Recycler Adapters.
+- com.myown.juniorawok.adapters.viewholders - Contains all view holders of the adapters.
+- com.myown.juniorawok.models - Contains the model classes of the entities in the project.
+- com.myown.juniorawok.network - Contains everything about network implementation.
+- com.myown.juniorawok.utils - Contains all helpers supporting code.
 
-### Installing
+# MVP
 
-A step by step series of examples that tell you have to get a development env running
+The MPV pattren is used to develop this application. In each activity package you can find a presentaion layer for that particular activity. All of the application logic and functionality about any particular activity is implemented in it's respective presenter. So, essentially I tried to seperate my application logic from my views. If there is any change in future or some additional feature needs to be added then we shall be sure about where exactly the change is going to happen in the code.
 
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+Using MVP pattren makes this application highly extensible and maintainable.
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
+* **Abdullah Nasim**
 
